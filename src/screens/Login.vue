@@ -1,4 +1,7 @@
-<template></template>
+<template>
+
+<h2>Login vue</h2>
+</template>
 
 <script>
 export default {};
