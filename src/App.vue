@@ -3,8 +3,9 @@ import {RouterView} from "vue-router"
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+<n-message-provider>
   <router-view></router-view>
+</n-message-provider>
 </template>
 
 <style>
@@ -14,6 +15,5 @@ import {RouterView} from "vue-router"
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
