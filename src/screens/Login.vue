@@ -1,7 +1,7 @@
 <template>
   <main>
     <section>
-        <n-h1><n-text type="default" strong >Login</n-text></n-h1>
+        <n-h1 style="text-align: center;"><n-text type="default" strong >Login</n-text></n-h1>
       <n-card size="huge" hoverable embedded>
         <n-form :model="model" ref="formRef" :rules="rules">
           <n-form-item path="username" label="Username">
@@ -35,6 +35,8 @@
 <script lang="ts" allowjs>
 import { defineComponent, ref } from "vue";
 import { useMessage } from "naive-ui";
+import {store} from '../store'
+import {router} from '../Router.vue'
 
 export default defineComponent({
   setup() {
@@ -68,9 +70,11 @@ export default defineComponent({
         e.preventDefault();
         formRef!.value!.validate((errors: Error[]) => {
           if (!errors) {
+            store.commit('signup', modelRef.value.username)
+            router.push('/chat')
             message.success("Successful login");
           } else {
-            console.log(errors);
+            
             message.error("Invalid");
           }
         });
