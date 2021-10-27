@@ -6,15 +6,13 @@
 </template>
 
 <script lang="ts">
-import {Message} from '../screens/Chat.vue'
-type POSITION = 'LEFT' | 'RIGHT';
 export default {
   props:{
     message: String,
     author: String,
     position: String 
   },
-  data(){
+  data(): any{
     return { 
       messageValue: this.message,
       positionValue: this.position || 'RIGHT'
@@ -48,5 +46,6 @@ export default {
 .author{
   background: transparent !important;
   font-size: 11px !important;
+  margin-bottom: 10px;
 }
 </style>

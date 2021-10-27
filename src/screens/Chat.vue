@@ -7,7 +7,6 @@
           :key="index"
           v-bind="msg"
           :position="msg.author===author?'RIGHT':'LEFT'"
-          class="message"
         ></chat-message>
       </div>
     </n-card>
@@ -131,6 +130,7 @@ export default {
               author: store.getters.author,
             };
             sendMessage(msg);
+            modelRef.value= {message:null}
           }
         });
       },
@@ -140,7 +140,7 @@ export default {
       handleWidgetOutput(payload:any){
         
         if(payload){
-          sendMessage({author:store.getters.author, message: payload})
+          sendMessage({author:store.getters.author, message: payload.toString()})
         }
         widgetOn.value = false;
       }
@@ -183,8 +183,5 @@ main {
   flex-direction: row;
   width: 100%;
   justify-content: center;
-}
-.message {
-  margin-bottom: 10px;
 }
 </style>

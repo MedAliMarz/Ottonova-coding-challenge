@@ -64,7 +64,7 @@ type DataType = String | Object | Array<String> | Array<number>;
 export default {
   props: {
     type: String,
-    data: Object as DataType,
+    data: Object as  DataType,
   },
   emits: ["widgetAnswer"],
   data() {
